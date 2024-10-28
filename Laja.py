@@ -1,3 +1,4 @@
+from streamlit.components.v1 import html
 import streamlit as st
 import folium
 from folium import Marker, PolyLine
@@ -37,7 +38,8 @@ folium.Marker(
     icon=folium.Icon(icon="home", color="red")
 ).add_to(m)
 
-# Vykreslení mapy ve streamlitu
+# Vykreslení mapy ve Streamlit jako HTML
 st.write("### Mapa cesty")
-st.map(m._repr_html_(), width=700, height=500)
+html(m._repr_html_(), width=700, height=500)
+
 
